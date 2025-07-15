@@ -259,5 +259,8 @@
     const random = Math.floor(Math.random() * numbers.length);
     const number = numbers[random];
     const msg = encodeURIComponent("سلام، أريد طلب كيس الماكلة العصري من Maroc Shop");
-    window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
-  }             
+    // Remove any dashes or spaces from the number
+    const cleanNumber = number.replace(/[^0-9]/g, "");
+    window.open(`https://wa.me/${cleanNumber}?text=${msg}`, '_blank');
+  }
+</script>       
