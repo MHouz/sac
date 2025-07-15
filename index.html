@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maroc Shop - كيس ديال الماكلة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #fff7ed;
+      margin: 0;
+      padding: 0;
+      color: #3a2200;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    header {
+      width: 100%;
+      background: #E6A000;
+      color: #fff;
+      padding: 32px 0 18px 0;
+      text-align: center;
+      box-shadow: 0 2px 16px #E6A00022;
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.1rem;
+      margin: 0 0 10px 0;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.15rem;
+      margin: 0;
+      font-weight: 600;
+      opacity: 0.95;
+      color: #fff;
+    }
+    .main-content {
+      background: #fff;
+      margin-top: -40px;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 #E6A00022;
+      padding: 32px 22px 24px 22px;
+      max-width: 430px;
+      width: 96vw;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-images {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .product-images img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2.5px solid #E6A000;
+      background: #fff7ed;
+      box-shadow: 0 2px 8px #0001;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .product-images img:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 4px 16px #E60B0033;
+      border-color: #E60B00;
+    }
+    .offer-badge {
+      background: #E60B00;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.1rem;
+      padding: 7px 22px;
+      border-radius: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #E60B0022;
+      letter-spacing: 1px;
+      display: inline-block;
+      animation: pulse 1.5s infinite alternate;
+    }
+    @keyframes pulse {
+      to { box-shadow: 0 0 24px #E60B0044; }
+    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px 0;
+      text-align: right;
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: #E60B00;
+      width: 100%;
+    }
+    ul.features li {
+      margin-bottom: 13px;
+      padding-right: 32px;
+      position: relative;
+      background: #fff7ed;
+      border-radius: 7px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      transition: background 0.2s;
+      border-right: 4px solid #E6A000;
+    }
+    ul.features li::before {
+      content: '✔️';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1em;
+      color: #E60B00;
+    }
+    .specs {
+      background: #FFF3CD;
+      border-radius: 12px;
+      padding: 13px 18px;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      font-weight: 600;
+      color: #E6A000;
+      box-shadow: 0 2px 8px #E6A00011;
+      width: 100%;
+      text-align: right;
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .old-price {
+      color: #E6A000;
+      text-decoration: line-through;
+      font-size: 1.1rem;
+      opacity: 0.7;
+    }
+    .new-price {
+      color: #fff;
+      background: #E60B00;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      border-radius: 10px;
+      padding: 4px 16px;
+      box-shadow: 0 1px 4px #E6A00011;
+    }
+    .btn-order {
+      background: #E6A000;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 18px 0;
+      font-size: 1.18rem;
+      cursor: pointer;
+      font-weight: 800;
+      transition: background 0.3s, transform 0.2s;
+      width: 100%;
+      box-shadow: 0 2px 8px #E6A00011;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .btn-order:hover {
+      background: #E60B00;
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .contact-row {
+      margin-top: 10px;
+      font-size: 0.98rem;
+      color: #E60B00;
+      text-align: center;
+    }
+    .contact-row a {
+      color: #E60B00;
+      text-decoration: underline;
+    }
+    footer {
+      margin: 32px 0 12px 0;
+      font-size: 0.93rem;
+      color: #E6A000;
+      letter-spacing: 0.2px;
+      text-align: center;
+      opacity: 0.8;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.3rem; }
+      .main-content { padding: 18px 4vw 16px 4vw; }
+      .product-images img { width: 65px; height: 65px; }
+      .specs { font-size: 0.95rem; }
+      .btn-order { font-size: 1rem; padding: 13px 0; }
+      .offer-badge { font-size: 1rem; padding: 6px 12px; }
+      .new-price { font-size: 1.1rem; }
+    }
+    @media (max-width: 400px) {
+      .main-content { padding: 10px 1vw 10px 1vw; }
+      .product-images img { width: 48px; height: 48px; }
+      header h1 { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Maroc Shop</h1>
+    <p>خلي لمكلة ديالك ديما معاك بأمان وأناقة!</p>
+  </header>
+  <section class="main-content">
+    <span class="offer-badge">عرض الصيف: توصيل مجاني!</span>
+    <div class="product-images">
+      <img src="1.jpg" alt="صورة المنتج 1" />
+      <img src="2.jpg" alt="صورة المنتج 2" />
+      <img src="3.jpg" alt="صورة المنتج 3" />
+    </div>
+    <div class="price-row">
+      <span class="old-price">199 درهم</span>
+      <span class="new-price">90 درهم</span>
+    </div>
+    <ul class="features">
+      <li>سهل في التنظيف ومتين</li>
+      <li>مواد آمنة 100% للطعام</li>
+      <li>خفيف وأنيق وسهل الحمل</li>
+      <li>مناسب للبحر، العمل، المدرسة والنزهات</li>
+    </ul>
+    <div class="specs">
+      <div>📏 الأبعاد: 20 × 22 × 15 سم</div>
+      <div>⚖️ الوزن: 235g</div>
+      <div>💼 متعدد الاستعمالات لكل أفراد العائلة</div>
+    </div>
+    <button class="btn-order" onclick="orderNow()">📩 اطلب الآن عبر واتساب</button>
+    <div class="contact-row">
+      أو تواصل معنا عبر <a href="mailto:contact@marocshop.com">البريد الإلكتروني</a>
+    </div>
+  </section>
+  <footer>
+    © 2025 Maroc Shop - جميع الحقوق محفوظة
+  </footer>
+ <script>
+  function orderNow() {
+    const numbers = [
+      "212778036867",
+      "212602862048",
+      "212710825506"
+    ];
+    const random = Math.floor(Math.random() * numbers.length);
+    const number = numbers[random];
+    const msg = encodeURIComponent("سلام، أريد طلب كيس الماكلة العصري من Maroc Shop");
+    window.open(`https://wa.me/${number}?text=${msg}`, '_blank');
+  }             
