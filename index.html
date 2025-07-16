@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maroc Shop - كيس ديال الماكلة</title>
+  <title>Maroc Shop - Sac à gouter</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     * { box-sizing: border-box; }
@@ -258,7 +258,7 @@
     ];
     const random = Math.floor(Math.random() * numbers.length);
     const number = numbers[random];
-    const msg = encodeURIComponent("سلام، أريد طلب كيس الماكلة العصري من Maroc Shop");
+    const msg = encodeURIComponent("سلام، أريد طلب Sac à gouterمن Maroc Shop");
     // Remove any dashes or spaces from the number
     const cleanNumber = number.replace(/[^0-9]/g, "");
     window.open(`https://wa.me/${cleanNumber}?text=${msg}`, '_blank');
